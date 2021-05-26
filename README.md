@@ -33,7 +33,7 @@ Step 5: Scroll down to the "Frameworks, Libraries and Embeddeed Content" section
 
 Step 6: Drag&Drop`LoginAuth.xcframework` from Finder project folder to this section, OR click the "Plus" button below, and select "Add Other" and manually specify the path to the `LoginAuth.xcframework` location.
 
-![](https://raw.githubusercontent.com/Mobile-Telematics/LoginAuthFramework-iOS/main/images/al.png)
+![](https://github.com/Mobile-Telematics/LoginAuthFramework-iOS/raw/master/images/al.png)
 
 Step 7: Add in header AppDelegate.h (or any file need for you) of your project this line `#import <LoginAuth/LoginAuth.h>`
 
