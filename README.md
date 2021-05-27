@@ -7,14 +7,14 @@
 LoginAuth Framework is created by DATA MOTION PTE. LTD. and allows you to integrate with our UserService API in a few steps.
 
 LoginAuth Framework has three main functions:
-1. Getting `deviceToken` for each user with one line of code for first registration or create account.
-2. Updating the `jwToken` when it expires.
-3. Get a new `jwToken` using the previously received `deviceToken` of the user for login.
+1. Creating `deviceToken` for each new Telematics SDK user.
+2. Refeshing the `jwToken` when it is expired.
+3. Geting `jwToken` for existing SDK User.
 
 
 ## Credentials
 
-For commercial use, you need create sandbox account & read documentation https://dev.telematicssdk.com/docs/quick-start and get `InstanceId` and`InstanceKey` auth keys to work with our LoginAuth Framework.
+Before you start using the framework, make sure you registered a company accouunt in the [Datahub]() and obtained `InstanceId` and`InstanceKey`. If you are new, please refer to the [documentation](doc.telematicssdk.comm) and register your company account in [Datahub](https://userdatahub.com/user/registration)
 
 
 ## LoginAuth Framework setup
@@ -116,20 +116,3 @@ Happy coding!
 
 
 ###### Copyright © 2020-2021 DATA MOTION PTE. LTD. All rights reserved.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
