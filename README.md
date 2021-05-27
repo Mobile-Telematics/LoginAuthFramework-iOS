@@ -13,13 +13,13 @@ LoginAuth Framework has three main functions:
 
 
 ## Credentials
-***
+
 Before you start using the framework, make sure you registered a company accouunt in the [Datahub]() and obtained `InstanceId` and`InstanceKey`. If you are new, please refer to the [documentation](doc.telematicssdk.comm) and register your company account in Datahub. [Sing Up](https://userdatahub.com/user/registration)
 
 
 ## LoginAuth Framework setup
 
-To integrate, you need to perform a few simple steps:
+To integrate the framework, you need to perform a few simple steps:
 
 Step 1: Download the `LoginAuth.xcframework` library from this repository.
 
@@ -42,7 +42,7 @@ Step 8: Enjoy!
 
 ## Basic concepts
 
-`deviceToken` - is the main individual SDK user identifier for your app to transfer user trips to the our SDK Platform. All user trips are recorded and accessible only using the deviceToken.
+`deviceToken` - is the main individual SDK user identifier for your app. this identifier is used as a key across all our services.
 
 `jwToken` - or JSON Web Token (JWT) is the main UserService API key, that allows you to get user individual statistics and user scorings by UserService APIs calls.
 
@@ -50,10 +50,12 @@ Step 8: Enjoy!
 
 For your convenience, these three actions are implemented in our LoginAuth Framework in one line of code as it is.
 
+## Methods
+### Create DeviceToken
 
-## How to use - Create DeviceToken
+Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you need an assistance in obtaining the credentails, please refer to the [documentation](https://dev.telematicssdk.com/docs/datahub#user-service-credentials)
 
-Just use this method and pass `instanceId` & `instanceKey` in it.
+
 
      [[LoginAuthCore sharedManager] createDeviceTokenForUserWithInstanceId:@"instanceId"
                                                                instanceKey:@"instanceKey"
@@ -68,12 +70,12 @@ User has been created. Congratulations!
 Save the received keys in your App - this is the main user data.
 
 
-## How to use - Refresh JWT
+### Refresh JWT
 
-When you request individual statistics or scorings for user in our UserService API, you can get an `Unauthorized 401` response.
-Error 401 indicates that the user's token has expired. In this case, the first step is to update the jwToken.
+Each `JWTtoken` has a limmited lifetime and in a certain period of time it is expired. As a result, when you call our API using invalid `JWTtoken` you will receive an Error `Unauthorized 401`.
+**Error 401** indicates that the user's `JWTtoken` has been expired. If so, as the first step, you have to update the `JWToken`.
 
-To update the jwToken, you need to pass the previously saved "old" `jwToken` & `refreshToken` in the method below.
+To update the `JWTtoken`, you are required to provide the latest `JWTtoken` & `refreshToken` to the method below.
 
     [[LoginAuthCore sharedManager] refreshJWTokenForUserWith:@"jwToken"
                                                 refreshToken:@"refreshToken"
@@ -83,15 +85,15 @@ To update the jwToken, you need to pass the previously saved "old" `jwToken` & `
         NSLog(@"NEW refreshToken %@", newRefreshToken);
     }];
 
-In response you will receive new tokens. Good.
+In response you will receive new `JWTtokens`. 
 
 
-## How to use - Get JWT with help of DeviceToken
+### Get JWT for existing SDK users
 
-When using app, there are scenarios when the user (for example) deleted the app or logged out. We strongly require and warn you about the need to save the `deviceToken` in the your app or in your backend side. `deviceToken` cannot be restored if it is lost!
+During the app usage, there may be several scenarios when the app loses `JWTtoken`, for example if the a user changes a smartphone or logs out. BTW, that is a reason why we strongly recommend you to store the `deviceToken` on your backend side. `deviceToken` cannot be restored if it is lost!
 
-We provide you with simple re-authorization.
-If you have a `deviceToken`, as well as `instanceId` and `instanceKey` received during registration, you can simply re-login the user to your app and receive a new jwToken & refreshToken for him.
+We provide you with a simple re-authorization, a method that you can use to get a valid `JWTtoken` for a particular user throught providing `DeviceToken`
+To use this mehod, you need `deviceToken`, `instanceId`, and `instanceKey` of which group the user belongs. in this case, `Devicetoken` works as a login, `instancekey` as a password. Then you can re-login the user and get a valid `JWTtoken` & `refreshToken`.
 
     [[LoginAuthCore sharedManager] getJWTokenForUserWithDeviceToken:@"deviceToken"
                                                          instanceId:@"instanceId"
@@ -101,7 +103,7 @@ If you have a `deviceToken`, as well as `instanceId` and `instanceKey` received 
         NSLog(@"NEW REFRESHTOKEN by DEVICETOKEN %@", refreshToken);
     }];
 
-In response, you will receive new `jwToken` and `refreshToken`, which will help you request statistics and scorings for each user.
+In response, you will receive a new `jwToken` and `refreshToken`.
 
 Happy coding!
 
