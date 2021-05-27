@@ -53,7 +53,7 @@ For your convenience, these three actions are implemented in our LoginAuth Frame
 ## Methods
 ### Create DeviceToken
 
-Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you need an assistance in obtaining the credentails, please refer to the [documentation](https://dev.telematicssdk.com/docs/datahub#user-service-credentials)
+Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you still have quiestions on how to obtain the credentails, please refer to the [documentation](https://dev.telematicssdk.com/docs/datahub#user-service-credentials)
 
 
 
@@ -65,9 +65,7 @@ Each SDK user has to have a `Devicetoken` and be associated with the app users. 
         NSLog(@"LoginAuthResponce refreshToken %@", refreshToken);
     }];
 
-User has been created. Congratulations! 
-
-Save the received keys in your App - this is the main user data.
+Once user is registered, you will receive the user credentails. make sure you pass the `Devicetoken` to your server and store it against a user profile, then pass it to your App - this is the main user detials that you will use for our services.
 
 
 ### Refresh JWT
@@ -110,11 +108,16 @@ Happy coding!
 
 ## Links
 
-[https://telematicssdk.com/](https://telematicssdk.com/)
+[Official product Web-page](https://telematicssdk.com/)
 
-[Official ZenRoad app for iOS](https://apps.apple.com/us/app/zenroad/id1432161345/)
+[Official API services web-page](https://www.telematicssdk.com/api-services/)
 
-[Official ZenRoad app for Android](https://play.google.com/store/apps/details?id=com.raxeltelematics.zenroad&hl=ru&gl=US)
+[Official SDK and API references](https://www.telematicssdk.com/api-services/)
 
+[Official ZenRoad web-page](https://www.telematicssdk.com/telematics-app/)
+[Official ZenRoad app for iOS](https://apps.apple.com/jo/app/zenroad/id1563218393)
+
+[Official ZenRoad app for Android](https://play.google.com/store/apps/details?id=com.telematicssdk.zenroad&hl=en&gl=US)
+[Official ZenRoad app for Huawei](https://appgallery.huawei.com/#/app/C104163115)
 
 ###### Copyright © 2020-2021 DATA MOTION PTE. LTD. All rights reserved.
