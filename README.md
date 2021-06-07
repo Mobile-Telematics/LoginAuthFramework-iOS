@@ -14,7 +14,7 @@ LoginAuth Framework has three main functions:
 
 ## Credentials
 
-Before you start using the framework, make sure you registered a company accouunt in the [Datahub]() and obtained `InstanceId` and`InstanceKey`. If you are new, please refer to the [documentation](doc.telematicssdk.comm) and register your company account in Datahub. [Sing Up](https://userdatahub.com/user/registration)
+Before you start using the framework, make sure you registered a company account in the [Datahub](https://userdatahub.com/) and obtained `InstanceId` and`InstanceKey`. If you are new, please refer to the [documentation](doc.telematicssdk.com) and register your company account in Datahub. [Sing Up](https://userdatahub.com/user/registration)
 
 
 ## LoginAuth Framework setup
