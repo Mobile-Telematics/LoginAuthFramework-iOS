@@ -55,7 +55,7 @@ For your convenience, these three actions are implemented in our LoginAuth Frame
 
 Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you still have quiestions on how to obtain the credentails, please refer to the [documentation](https://dev.telematicssdk.com/docs/datahub#user-service-credentials)
 
-
+Objective-C
 
      [[LoginAuthCore sharedManager] createDeviceTokenForUserWithInstanceId:@"instanceId"
                                                                instanceKey:@"instanceKey"
@@ -64,6 +64,14 @@ Each SDK user has to have a `Devicetoken` and be associated with the app users. 
         NSLog(@"LoginAuthResponce jwToken %@", jwToken);
         NSLog(@"LoginAuthResponce refreshToken %@", refreshToken);
     }];
+
+Swift
+
+     LoginAuthCore.sharedManager()?.createDeviceTokenForUser(withInstanceId: "instanceId",
+                                                                instanceKey: "instanceKey",
+                                                                result: { (deviceToken, jwToken, refreshToken) in
+            print("Success Create User")
+    })
 
 Once user is registered, you will receive the user credentails. make sure you pass the `Devicetoken` to your server and store it against a user profile, then pass it to your App - this is the main user detials that you will use for our services.
 
@@ -75,6 +83,8 @@ Each `JWTtoken` has a limmited lifetime and in a certain period of time it is ex
 
 To update the `JWTtoken`, you are required to provide the latest `JWTtoken` & `refreshToken` to the method below.
 
+Objective-C
+
     [[LoginAuthCore sharedManager] refreshJWTokenForUserWith:@"jwToken"
                                                 refreshToken:@"refreshToken"
                                                       result:^(NSString *newJWToken, NSString *newRefreshToken) {
@@ -83,7 +93,14 @@ To update the `JWTtoken`, you are required to provide the latest `JWTtoken` & `r
         NSLog(@"NEW refreshToken %@", newRefreshToken);
     }];
 
-In response you will receive new `JWTtokens`. 
+Swift
+
+    LoginAuthCore.sharedManager()?.refreshJWTokenForUser(with: "jwToken",
+                                                             refreshToken: "refreshToken",
+                                                             result: { (newJWToken, newRefreshToken) in
+            print("Success Refresh jwToken & refreshToken")
+    })
+In response you will receive new `JWTtokens`.
 
 
 ### Get JWT for existing SDK users
@@ -93,6 +110,8 @@ During the app usage, there may be several scenarios when the app loses `JWTtoke
 We provide you with a simple re-authorization, a method that you can use to get a valid `JWTtoken` for a particular user throught providing `DeviceToken`
 To use this mehod, you need `deviceToken`, `instanceId`, and `instanceKey` of which group the user belongs. in this case, `Devicetoken` works as a login, `instancekey` as a password. Then you can re-login the user and get a valid `JWTtoken` & `refreshToken`.
 
+Objective-C
+
     [[LoginAuthCore sharedManager] getJWTokenForUserWithDeviceToken:@"deviceToken"
                                                          instanceId:@"instanceId"
                                                         instanceKey:@"instanceKey"
@@ -100,6 +119,15 @@ To use this mehod, you need `deviceToken`, `instanceId`, and `instanceKey` of wh
         NSLog(@"NEW JWT by DEVICETOKEN %@", jwToken);
         NSLog(@"NEW REFRESHTOKEN by DEVICETOKEN %@", refreshToken);
     }];
+
+Swift
+
+    LoginAuthCore.sharedManager()?.getJWTokenForUser(withDeviceToken: "deviceToken",
+                                                         instanceId: "instanceId",
+                                                         instanceKey: "instanceKey",
+                                                         result: { (jwToken, refreshToken) in
+            print("Success Getting New jwToken & refreshToken by DeviceToken")
+    })
 
 In response, you will receive a new `jwToken` and `refreshToken`.
 
@@ -123,3 +151,4 @@ Happy coding!
 [Official ZenRoad app for Huawei](https://appgallery.huawei.com/#/app/C104163115)
 
 ###### Copyright © 2020-2021 DATA MOTION PTE. LTD. All rights reserved.
+
