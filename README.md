@@ -131,6 +131,69 @@ Swift
 
 In response, you will receive a new `jwToken` and `refreshToken`.
 
+## Additional methods
+### Create DeviceToken with Parameters
+
+Additionally, you can create a user's `deviceToken` and get the necessary keys (`JWTtoken`, `refreshToken` ) with additional parameters. This is not a required method, it just allows you to store the user profile in a different way. You can specify the below given parameters when creating a user's deviceToken:
+- userEmail
+- userPhone
+- firstName
+- lastName
+- address
+- birthday
+- gender
+- martitalStatus
+- childrenCount
+- clientId
+
+Objective-C
+
+    [[LoginAuthCore sharedManager] createDeviceTokenForUserWithParametersAndInstanceId:@"instanceId"
+                                                                           instanceKey:@"instanceKey"
+                                                                                 email:@"mail@mail.mail"
+                                                                                 phone:@"+10000000000"
+                                                                             firstName:@"TELEMATICS_USERNAME"
+                                                                              lastName:@"TELEMATICS_LASTNAME"
+                                                                               address:@"CITY"
+                                                                              birthday:@""
+                                                                                gender:@"Male"    // String Male/Female
+                                                                        martitalStatus:@"1"       // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
+                                                                         childrenCount:@"0"       // String count 1-10
+                                                                              clientId:@"idOptional" result:^(NSString *deviceToken, NSString *jwToken, NSString *refreshToken) {
+        NSLog(@"UserServiceResponce deviceToken %@", deviceToken);
+        NSLog(@"UserServiceResponce jwToken %@", jwToken);
+        NSLog(@"UserServiceResponce refreshToken %@", refreshToken);
+    }];
+
+    
+    
+
+You can always request information about the user profile anytime:
+
+    [[LoginAuthCore sharedManager] getUserProfileWithInstanceId:@"instanceId"
+                                                    instanceKey:@"instanceKey"
+                                                        jwToken:@"jwToken" result:^(NSString *email, NSString *phone, NSString *firstName, NSString *lastName, NSString *address, NSString *birthday, NSString *gender, NSString *martitalStatus, NSString *childrenCount, NSString *clientId) {
+        NSLog(@"Success fetch user profile");
+        //
+    }];
+    
+And also, update the user profile with the following method:
+
+    [[LoginAuthCore sharedManager] updateUserProfileWithParametersAndInstanceId:@"instanceId"
+                                                                    instanceKey:@"instanceKey"
+                                                                        jwToken:@"jwToken"
+                                                                          email:@"mail@mail.mail"
+                                                                          phone:@"+10000000000"
+                                                                      firstName:@"TELEMATICS_USERNAME"
+                                                                       lastName:@"TELEMATICS_LASTNAME"
+                                                                        address:@"NEWCITY"
+                                                                       birthday:@""
+                                                                         gender:@"Male"  // String Male/Female
+                                                                 martitalStatus:@"1"  // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
+                                                                  childrenCount:@"5"  // String count 1-10
+                                                                       clientId:@"idOptionalNew" result:^(NSString *result) {
+        NSLog(@"Success update user profile");
+    }];
 Happy coding!
 
 
@@ -151,4 +214,5 @@ Happy coding!
 [Official ZenRoad app for Huawei](https://appgallery.huawei.com/#/app/C104163115)
 
 ###### Copyright © 2020-2021 DATA MOTION PTE. LTD. All rights reserved.
+
 
