@@ -142,7 +142,7 @@ Additionally, you can create a user's `deviceToken` and get the necessary keys (
 - address
 - birthday
 - gender
-- martitalStatus
+- maritalStatus
 - childrenCount
 - clientId
 
@@ -157,7 +157,7 @@ Objective-C
                                                                                address:@"CITY"
                                                                               birthday:@""
                                                                                 gender:@"Male"    // String Male/Female
-                                                                        martitalStatus:@"1"       // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
+                                                                         maritalStatus:@"1"       // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
                                                                          childrenCount:@"0"       // String count 1-10
                                                                               clientId:@"idOptional" result:^(NSString *deviceToken, NSString *jwToken, NSString *refreshToken) {
         NSLog(@"UserServiceResponce deviceToken %@", deviceToken);
@@ -172,7 +172,7 @@ You can always request information about the user profile anytime:
 
     [[LoginAuthCore sharedManager] getUserProfileWithInstanceId:@"instanceId"
                                                     instanceKey:@"instanceKey"
-                                                        jwToken:@"jwToken" result:^(NSString *email, NSString *phone, NSString *firstName, NSString *lastName, NSString *address, NSString *birthday, NSString *gender, NSString *martitalStatus, NSString *childrenCount, NSString *clientId) {
+                                                        jwToken:@"jwToken" result:^(NSString *email, NSString *phone, NSString *firstName, NSString *lastName, NSString *address, NSString *birthday, NSString *gender, NSString *maritalStatus, NSString *childrenCount, NSString *clientId) {
         NSLog(@"Success fetch user profile");
         //
     }];
@@ -189,7 +189,7 @@ And also, update the user profile with the following method:
                                                                         address:@"NEWCITY"
                                                                        birthday:@""
                                                                          gender:@"Male"  // String Male/Female
-                                                                 martitalStatus:@"1"  // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
+                                                                  maritalStatus:@"1"  // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
                                                                   childrenCount:@"5"  // String count 1-10
                                                                        clientId:@"idOptionalNew" result:^(NSString *result) {
         NSLog(@"Success update user profile");
