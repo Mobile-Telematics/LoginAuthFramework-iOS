@@ -10,6 +10,8 @@ LoginAuth Framework has three main functions:
 1. Creating `deviceToken` for each new Telematics SDK user.
 2. Refeshing the `jwToken` when it is expired.
 3. Geting `jwToken` for existing SDK User.
+4. Get authorized user profile info
+5. Update authorized user profile info
 
 
 ## Credentials
