@@ -21,6 +21,10 @@ Before you start using the framework, make sure you registered a company account
 
 ## LoginAuth Framework setup
 
+Here you can find a short video guide, how to add LoginAuth Framework to your iOS app:
+https://www.youtube.com/watch?v=rlqSjvLa_Nk&ab_channel=Damoov-Telematicsinfrastructureformobileapps
+
+
 To integrate the framework, you need to perform a few simple steps:
 
 Step 1: Download the `LoginAuth.xcframework` library from this repository.
