@@ -14,7 +14,7 @@ LoginAuth Framework has three main functions:
 
 ## Credentials
 
-Before you start using the framework, make sure you registered a company account in the [Datahub](https://userdatahub.com/) and obtained `InstanceId` and`InstanceKey`. If you are new, please refer to the [documentation](doc.telematicssdk.com) and register your company account in Datahub. [Sing Up](https://userdatahub.com/user/registration)
+Before you start using the framework, make sure you registered a company account in [DataHub](https://app.damoov.com/) and obtained `InstanceID` and`InstanceKEY`. If you are new, please refer to the [documentation](https://docs.telematicssdk.com/docs/setting-up-the-company-account) and register your company account in DataHub. [Sing Up](https://app.damoov.com/user/registration)
 
 
 ## LoginAuth Framework setup
@@ -53,7 +53,7 @@ For your convenience, these three actions are implemented in our LoginAuth Frame
 ## Methods
 ### Create DeviceToken
 
-Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you still have quiestions on how to obtain the credentails, please refer to the [documentation](https://dev.telematicssdk.com/docs/datahub#user-service-credentials)
+Each SDK user has to have a `Devicetoken` and be associated with the app users. To create `DeviceToken` please use the method below. To complete a call, you are required to provide `instanceId` & `instanceKey`. If you still have quiestions on how to obtain the credentails, please refer to the [documentation](https://docs.telematicssdk.com/docs/datahub#user-group-credentials)
 
 Objective-C
 
@@ -199,13 +199,13 @@ Happy coding!
 
 ## Links
 
-[Official product Web-page](https://telematicssdk.com/)
+[Official product Web-page](https://app.damoov.com/)
 
-[Official API services web-page](https://www.telematicssdk.com/api-services/)
+[Official API services web-page](https://www.damoov.com/telematics-api/)
 
-[Official SDK and API references](https://www.telematicssdk.com/api-services/)
+[Official API references](https://docs.telematicssdk.com/reference)
 
-[Official ZenRoad web-page](https://www.telematicssdk.com/telematics-app/)
+[Official ZenRoad web-page](https://www.damoov.com/telematics-app/)
 
 [Official ZenRoad app for iOS](https://apps.apple.com/jo/app/zenroad/id1563218393)
 
