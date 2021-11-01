@@ -23,7 +23,7 @@ Before you start using the framework, make sure you registered a company account
 
 Here you can find a short video guide, how to add LoginAuth Framework to your iOS app:
 
-[![Watch the video](https://img.youtube.com/vi/rlqSjvLa_Nk/maxresdefault.jpg)](https://www.youtube.com/embed/rlqSjvLa_Nk)
+[![Watch the video](https://github.com/Mobile-Telematics/LoginAuthFramework-iOS/blob/master/images/iOS%20LoginAuth%20Framework.png)](https://www.youtube.com/embed/rlqSjvLa_Nk)
 
 
 To integrate the framework, you need to perform a few simple steps:
