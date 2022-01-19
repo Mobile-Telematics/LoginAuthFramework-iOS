@@ -49,7 +49,7 @@ Step 8: Enjoy!
 
 ## Basic concepts
 
-`deviceToken` - is the main individual SDK user identifier for your app. this identifier is used as a key across all our services.
+`deviceToken` - is the main individual SDK user identifier for your app. This identifier is used as a key across all our services.
 
 `jwToken` - or JSON Web Token (JWT) is the main UserService API key, that allows you to get user individual statistics and user scorings by UserService APIs calls.
 
