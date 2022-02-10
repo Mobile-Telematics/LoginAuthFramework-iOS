@@ -165,7 +165,7 @@ Objective-C
                                                                               birthday:@""
                                                                                 gender:@"Male"    // String Male/Female
                                                                          maritalStatus:@"1"       // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
-                                                                         childrenCount:@"0"       // String count 1-10
+                                                                         childrenCount:@0         // int 1-10
                                                                               clientId:@"idOptional" result:^(NSString *deviceToken, NSString *jwToken, NSString *refreshToken) {
         NSLog(@"UserServiceResponce deviceToken %@", deviceToken);
         NSLog(@"UserServiceResponce jwToken %@", jwToken);
@@ -197,7 +197,7 @@ And also, update the user profile with the following method:
                                                                        birthday:@""
                                                                          gender:@"Male"  // String Male/Female
                                                                   maritalStatus:@"1"  // String 1/2/3/4 = "Married"/"Widowed"/"Divorced"/"Single"
-                                                                  childrenCount:@"5"  // String count 1-10
+                                                                  childrenCount:@5    // int 1-10
                                                                        clientId:@"idOptionalNew" result:^(NSString *result) {
         NSLog(@"Success update user profile");
     }];
